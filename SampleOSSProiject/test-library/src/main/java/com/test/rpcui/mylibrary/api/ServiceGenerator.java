@@ -44,7 +44,6 @@ public class ServiceGenerator {
         OkHttpClient client = httpClient.build();
 
         retrofit = new Retrofit.Builder()
-                .baseUrl("www.gooogle.com")
                 .addConverterFactory(GsonConverterFactory.create(GsonModule.getInstance().getGson()))
                 .client(client)
                 .build();

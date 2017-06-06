@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 
 android {
+
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
 
@@ -21,14 +22,42 @@ android {
     }
 }
 
+ext {
+    bintrayRepo = 'Test-OSS'
+    bintrayName = 'oss-test-repo'
+
+    publishedGroupId = 'com.pelep.test'
+    libraryName = 'test-library'
+    artifact = 'test-library'
+
+    libraryDescription = 'Samplee'
+
+    siteUrl = 'https://github.com/nuuneoi/FBLikeAndroid'
+    gitUrl = 'https://github.com/nuuneoi/FBLikeAndroid.git'
+
+    libraryVersion = '1.0.1'
+
+    developerId = 'yatzkie'
+    developerName = 'Ronald Phillip Cui'
+    developerEmail = 'ronaldphill33@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.google.android.gms:play-services-vision:10.2.1'
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
     compile 'com.squareup.okhttp3:logging-interceptor:3.8.0'
     testCompile 'junit:junit:4.12'
 }
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'

@@ -24,7 +24,7 @@ public class SampleActivity extends AppCompatActivity {
 
         ServiceGenerator generator = new ServiceGenerator();
         ApiService service = generator.createService();
-        service.createAnonymousUser("sdsds").enqueue(new Callback<String>() {
+        service.createAnonymousUser("true").enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
 
